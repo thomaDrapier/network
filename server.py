@@ -11,6 +11,7 @@ socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket.bind(address)
 
 
+
 def listen_data_socket(conn, address):
     a = True
     while a :
