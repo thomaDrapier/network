@@ -7,7 +7,7 @@ socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def send_message():
     while True:
-        texte = input ("Ecriver votre message et taper entrer pour l'envoyer: ")
+        texte = input ("")
         socket.send(texte.encode())
 
 def received_message():
