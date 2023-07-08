@@ -5,6 +5,7 @@ HOST = 'localhost'
 PORT = 5000
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+
 def send_message():
     while True:
         texte = input ("")
