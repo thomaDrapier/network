@@ -2,16 +2,15 @@ import socket
 import threading
 import database
 
-class server():
+class Server():
     HOST = ''
     PORT = 5000
     address = (HOST,PORT)
 
     def __init__(self):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.database = database.Database()
         
-        
-    
     def listen_connexion(self):
         self.socket.bind(self.address)
         while True:
@@ -33,7 +32,7 @@ class server():
             # et on ferme la connexion.
             except ConnectionResetError:
                 print(f"connexion perdue avec address{address}")
-                database.delete_user(address[0])
+                self.database.delete_user(address[1]) # Numéro de port car en local 
                 a = False
                 conn.close()
 
@@ -44,8 +43,8 @@ class server():
         name = conn.recv(1024).decode()
 
     # Et en fonction de la disponibilté du nom, ajoute ou non le cient dans la base de données.
-        if database.check_username(name): # Disponible
-            database.insert_user(name, address[0], address[1])
+        if self.database.check_username(name): # Disponible
+            self.database.insert_user(name, address[0], address[1])
             conn.send("Vous êtes connecté à la base de données".encode())
 
             thread = threading.Thread(target=self.listen_data_socket, args=(conn,address,))
@@ -59,6 +58,6 @@ class server():
 
 
 
-serveur = server()
+serveur = Server()
 serveur.listen_connexion()
 
