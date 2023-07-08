@@ -9,7 +9,7 @@ address = (HOST,PORT)
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket.bind(address)
-
+#Ce ci est une amélioration
 def server_process(data):
     pass
 
