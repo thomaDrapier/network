@@ -59,3 +59,15 @@ class Database():
         cursor.execute("DELETE FROM active_users")
         conn.commit()
         conn.close()
+    
+    def searching(self, name): # Numéro de port car en local
+        conn = sqlite3.connect("database.db")
+        cursor = conn.cursor()
+        query = ''' SELECT port 
+                    FROM active_users
+                    WHERE active_users.user_name = ?
+                '''
+        cursor.execute(query, (name,))
+        data = cursor.fetchall()
+        conn.commit()
+        return data[0][0]

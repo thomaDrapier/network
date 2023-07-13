@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "1810154320ee478e",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a1c9c568936e027",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b30ae6844afe113",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-07-12 14.43.37.excalidraw.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8fe66431eb6dea4f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4e36a236f10258d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e2394f7fa4c64683",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4abf580b941b1cc3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "33b1b23a1b8b2653",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "54e51360aece0d96",
+    "type": "split",
+    "children": [
+      {
+        "id": "051863d1ea3c1293",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e1d9c7342f107e3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-07-12 14.43.37.excalidraw.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "40f8441ed01fea47",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-07-12 14.43.37.excalidraw.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3e0e5bc9a2e81312",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9dcd5936d9bb4396",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Excalidraw/Drawing 2023-07-12 14.43.37.excalidraw.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "floating": {
+    "id": "8fbbbc8795642763",
+    "type": "floating",
+    "children": [
+      {
+        "id": "c315c70d44146bbe",
+        "type": "window",
+        "children": [
+          {
+            "id": "60f73f562500f21c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "b228966350b5360e",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "Chat en réseau/Avancement.canvas",
+                    "viewState": {
+                      "x": 411.81327909692135,
+                      "y": -544.3577018485701,
+                      "zoom": -0.7886497494551374
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 34,
+        "y": 18,
+        "width": 849,
+        "height": 600,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "9b30ae6844afe113",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2023-07-12 23.23.57.excalidraw.md",
+    "Chat en réseau/Avancement.canvas",
+    "Chat en réseau/server/Server.md",
+    "Excalidraw/Drawing 2023-07-12 14.43.37.excalidraw.md",
+    "Excalidraw/excal.excalidraw",
+    "Chat en réseau/d.md",
+    "Excalidraw/Scripts/Downloaded/Fixed inner distance.svg",
+    "Excalidraw/Scripts/Downloaded/Fixed inner distance.md",
+    "Excalidraw/Scripts/Downloaded/Box Selected Elements.svg",
+    "Excalidraw/Scripts/Downloaded/Box Selected Elements.md",
+    "Chat en réseau/database/Database.md",
+    "Excalidraw/Scripts/Downloaded/Mindmap format.svg",
+    "Excalidraw/Scripts/Downloaded/Mindmap format.md",
+    "Excalidraw/Scripts/Downloaded/Normalize Selected Arrows.svg",
+    "Excalidraw/Scripts/Downloaded/Normalize Selected Arrows.md",
+    "Excalidraw/Scripts/Downloaded/Connect elements.svg",
+    "Excalidraw/Scripts/Downloaded/Connect elements.md",
+    "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.svg",
+    "Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md",
+    "Excalidraw/Scripts/Downloaded/Add Connector Point.svg",
+    "Excalidraw/Scripts/Downloaded/Add Connector Point.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Excalidraw",
+    "Chat en réseau/server/Ecoute transmission données.md",
+    "Chat en réseau/server/Ecoute demande connexions.md",
+    "Chat en réseau/database/Disponibilité du nom d'utilisateur.md",
+    "Chat en réseau/Les fonctions.md",
+    "Sans titre.md",
+    "Chat en réseau",
+    "Chat en réseau/database/Ajout et suppression d'un utilisateur.md",
+    "Chat en réseau/database/Création de la base de données.md",
+    "database/Création base de données.md",
+    "Chat en réseau/client",
+    "Chat en réseau/server",
+    "Chat en réseau/database"
+  ]
+}

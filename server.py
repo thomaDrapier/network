@@ -1,11 +1,13 @@
 import socket
 import threading
 import database
+import pickle
 
 class Server():
     HOST = ''
     PORT = 5000
     address = (HOST,PORT)
+    user_connections = dict()
 
     def __init__(self):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -15,47 +17,59 @@ class Server():
         self.socket.bind(self.address)
         while True:
             self.socket.listen()
-            conn, address = self.socket.accept() # Connexion d'un client au serveur mais pas encore connecté à la base de données
+            conn, address = self.socket.accept() 
             print(f"{address} vient de se connecter")
-            
-            # Nouveau thread pour ajouter ou on le client à la base de données
-            thread = threading.Thread(target=self.select_username, args=(conn,address)) 
+            thread = threading.Thread(target=self.verify_username, args=(conn, address, self.socket)) 
             thread.start()
-        
+    
+    def verify_username(self, conn, address, socket):
+        data_received = pickle.loads(conn.recv(1096))
+        user_name = data_received['text']
+        if self.database.check_username(user_name): # Disponible
+            self.database.insert_user(user_name, address[0], address[1])
+            self.user_connections[f"{user_name}"] = conn # Ajout dans le dico de l'utilisateur associé à sa socket
+            conn.send("connected".encode())
+            thread = threading.Thread(target=self.listen_data_socket, args=(conn, address, socket))
+            thread.start()
+        else :
+            conn.send("error")
+            
 
-    def listen_data_socket(self, conn, address):
+    
+    def listen_data_socket(self, conn, address, socket):
         a = True
         while a :
             try:
-                data = conn.recv(1024)
-            # En cas de perte de la connexion avec le remote client, on arrête d'écouter la socket
-            # et on ferme la connexion.
+                data = conn.recv(1096)
+                self.server_process(data, socket)
+
             except ConnectionResetError:
                 print(f"connexion perdue avec address{address}")
-                self.database.delete_user(address[1]) # Numéro de port car en local 
+                self.database.delete_user(address[1]) 
                 a = False
                 conn.close()
+    
+    def server_process(self, data, socket):
+        data = pickle.loads(data)
+        code = data["code"]
+        print(code)
+        if code == 0:
+            self.message_to_server(data, socket)
+        else :
+            self.message_to_users(data)
+    
+    def message_to_server(self, data, socket):
+        pass
 
-    def select_username(self, conn, address):
-    # Lors d'une connexion par le client, cette fonction demande au client de renseigner un nom d'utilsiateur
-        text = "Choisissez un nom d'tilisateur pour être connecté au chat"
-        conn.send(text.encode())
-        name = conn.recv(1024).decode()
+    def message_to_users(self, data):
+        text, dest = data["message"], data["destinataire"]
+        print(dest)
+        coordonate_dest = self.database.searching(dest)
+        print(coordonate_dest)
+        data_sent= pickle.dumps({"destinataire": dest, "message": text, "code": 99})
+        self.user_connections[f"{dest}"].send(data_sent)
 
-    # Et en fonction de la disponibilté du nom, ajoute ou non le cient dans la base de données.
-        if self.database.check_username(name): # Disponible
-            self.database.insert_user(name, address[0], address[1])
-            conn.send("Vous êtes connecté à la base de données".encode())
-
-            thread = threading.Thread(target=self.listen_data_socket, args=(conn,address,))
-            thread.start() # On lance l'écoute permanente pour cette connexion cliente sur un autre thread
-
-        else: # Indisponible 
-            conn.send("Ce nom n'est pas disponible".encode())
-            self.select_username(conn, address)
-
-                
-
+        
 
 
 serveur = Server()
